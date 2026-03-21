@@ -1,5 +1,11 @@
+import Canvas from "./components/Canvas";
+
 function App() {
-  return <h1>Clean-up</h1>;
+  return (
+    <>
+      <Canvas />
+    </>
+  );
 }
 
 export default App;
