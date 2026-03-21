@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Colors */
+  --color-surface: var(--color-surface);
+  --color-surface-dim: var(--color-surface-dim);
+  --color-surface-container-low: var(--color-surface-container-low);
+  --color-surface-container: var(--color-surface-container);
+  --color-surface-container-high: var(--color-surface-container-high);
+
+  --color-on-surface: var(--color-on-surface);
+  --color-on-surface-variant: var(--color-on-surface-variant);
+
+  --color-primary: var(--color-primary);
+  --color-primary-dim: var(--color-primary-dim);
+  --color-primary-container: var(--color-primary-container);
+  --color-on-primary: var(--color-on-primary);
+
+  --color-outline: var(--color-outline);
+  --color-outline-variant: var(--color-outline-variant);
+
+  --color-tertiary: var(--color-tertiary);
+  --color-tertiary-container: var(--color-tertiary-container);
+  --color-on-tertiary-container: var(--color-on-tertiary-container);
+
+  --color-error: var(--color-error);
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+/* Dark Theme (Default) */
+:root {
+  --color-surface: #0c0e12;
+  --color-surface-dim: #0c0e12;
+  --color-surface-container-low: #111319;
+  --color-surface-container: #161a21;
+  --color-surface-container-high: #1b2029;
+
+  --color-on-surface: #e0e5f5;
+  --color-on-surface-variant: #a5abb9;
+
+  --color-primary: #b7c4ff;
+  --color-primary-dim: #a4b5ff;
+  --color-primary-container: #0039b4;
+  --color-on-primary: #0034a5;
+
+  --color-outline: #6f7683;
+  --color-outline-variant: #424854;
+
+  --color-tertiary: #efe7ff;
+  --color-tertiary-container: #e1d8fa;
+  --color-on-tertiary-container: #504b66;
+
+  --color-error: #ee7d77;
+}
+
+/* Light Theme */
+.light {
+  --color-surface: #f9f9ff;
+  --color-surface-dim: #e0e5f5;
+  --color-surface-container-low: #ffffff;
+  --color-surface-container: #f0f2f8;
+  --color-surface-container-high: #e8ebf3;
+
+  --color-on-surface: #161a21;
+  --color-on-surface-variant: #53555a;
+
+  --color-primary: #004eeb;
+  --color-primary-dim: #0039b4;
+  --color-primary-container: #dce1ff;
+  --color-on-primary: #ffffff;
+
+  --color-outline: #6f7683;
+  --color-outline-variant: #c4c8d0;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  min-height: 100vh;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Utility for Dotted Grid Background */
+.dotted-grid {
+  background-image: radial-gradient(
+    circle,
+    var(--color-outline-variant) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+  opacity: 0.15;
+}
