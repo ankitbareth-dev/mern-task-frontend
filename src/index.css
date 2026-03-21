@@ -71,15 +71,16 @@
   --color-surface-container-high: #e8ebf3;
 
   --color-on-surface: #161a21;
-  --color-on-surface-variant: #53555a;
+
+  --color-on-surface-variant: #44474e;
 
   --color-primary: #004eeb;
   --color-primary-dim: #0039b4;
   --color-primary-container: #dce1ff;
   --color-on-primary: #ffffff;
 
-  --color-outline: #6f7683;
-  --color-outline-variant: #c4c8d0;
+  --color-outline: #5f6775;
+  --color-outline-variant: #9ca3af;
 }
 
 /* Base Styles */

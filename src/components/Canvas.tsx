@@ -1,4 +1,5 @@
 import ThemeToggle from "./ThemeToggle";
+import InputNode from "./InputNode";
 
 function Canvas() {
   return (
@@ -13,9 +14,7 @@ function Canvas() {
 
       {/* Main Content Area */}
       <main className="relative z-10 grow flex items-center justify-center">
-        <p className="text-on-surface-variant font-body text-sm uppercase tracking-widest opacity-50">
-          Canvas Ready
-        </p>
+        <InputNode data={{ value: "" }} />
       </main>
     </div>
   );
