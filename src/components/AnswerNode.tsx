@@ -26,7 +26,6 @@ const AnswerNode = ({ response, isLoading }: AnswerNodeProps) => {
       </div>
 
       {/* Output Area */}
-
       <div className="custom-scrollbar overflow-y-auto bg-surface-container-high/50 border border-outline-variant/30 rounded-lg h-24 md:h-36 px-3 md:px-4 py-2 md:py-3 flex items-start">
         {isLoading ? (
           <p className="text-tertiary/80 text-sm md:text-base italic animate-pulse w-full">

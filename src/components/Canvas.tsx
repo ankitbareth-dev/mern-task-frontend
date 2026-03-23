@@ -41,7 +41,12 @@ function Canvas() {
 
       <main className="relative z-10 grow flex flex-col items-center justify-center gap-10 md:gap-40 px-4 py-12 md:py-20">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-16 w-full max-w-5xl">
-          <InputNode value={inputValue} onChange={handleInputChange} />
+          <InputNode
+            value={inputValue}
+            onChange={handleInputChange}
+            onSubmit={handleRunFlow}
+            isLoading={isLoading}
+          />
 
           {/* Visual Connector */}
           <div className="hidden md:block h-0.5 w-12 bg-linear-to-r from-primary/30 via-primary to-primary/30 rounded-full" />
