@@ -39,7 +39,7 @@ function Canvas() {
         <ThemeToggle />
       </div>
 
-      <main className="relative z-10 grow flex flex-col items-center justify-center gap-6 md:gap-10 px-4 py-12 md:py-20">
+      <main className="relative z-10 grow flex flex-col items-center justify-center gap-10 md:gap-40 px-4 py-12 md:py-20">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-16 w-full max-w-5xl">
           <InputNode value={inputValue} onChange={handleInputChange} />
 

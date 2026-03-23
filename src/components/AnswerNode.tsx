@@ -7,7 +7,7 @@ interface AnswerNodeProps {
 
 const AnswerNode = ({ response, isLoading }: AnswerNodeProps) => {
   return (
-    <div className="relative bg-surface-container-low p-4 md:p-6 rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.4)] border border-outline-variant/20 w-11/12 md:w-120 transition-all duration-300 hover:border-tertiary/30">
+    <div className="relative bg-surface-container-low p-4 md:p-6 rounded-xl border border-outline-variant/20 w-11/12 md:w-120 transition-all duration-300 hover:border-tertiary/30">
       {/* Header */}
       <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
         <div className="p-1 md:p-1.5 bg-tertiary-container/30 rounded flex items-center justify-center">
@@ -26,7 +26,8 @@ const AnswerNode = ({ response, isLoading }: AnswerNodeProps) => {
       </div>
 
       {/* Output Area */}
-      <div className="bg-surface-container-high/50 border border-outline-variant/30 rounded-lg min-h-24 md:min-h-36 px-3 md:px-4 py-2 md:py-3 flex items-start">
+
+      <div className="custom-scrollbar overflow-y-auto bg-surface-container-high/50 border border-outline-variant/30 rounded-lg h-24 md:h-36 px-3 md:px-4 py-2 md:py-3 flex items-start">
         {isLoading ? (
           <p className="text-tertiary/80 text-sm md:text-base italic animate-pulse w-full">
             Thinking...
