@@ -46,8 +46,8 @@ const InputNode = ({
       </div>
 
       {/* Hint Text */}
-      <div className="absolute bottom-2 right-4 z-10">
-        <span className="text-[10px] text-on-surface-variant/40 italic">
+      <div className="absolute bottom-1 right-4 z-10 ">
+        <span className="text-[10px] text-on-surface-variant/40 italic ">
           <kbd className="px-1 py-0.5 bg-surface-container-high rounded text-[9px]">
             Enter
           </kbd>{" "}

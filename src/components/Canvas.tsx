@@ -68,11 +68,29 @@ function Canvas() {
           <AnswerNode response={outputValue} isLoading={isLoading} />
         </div>
 
-        {/* Buttons Container */}
-        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-          <ResetButton onClick={handleReset} disabled={isResetDisabled} />
-          <RunFlowButton onClick={handleRunFlow} isLoading={isLoading} />
-          <SaveButton onClick={handleSave} disabled={!outputValue} />
+        {/* Buttons Container  */}
+        <div className="flex flex-row w-full justify-center gap-3 md:gap-6 max-w-md md:max-w-none">
+          <div className="flex-1 md:flex-initial">
+            <ResetButton
+              onClick={handleReset}
+              disabled={isResetDisabled}
+              className="w-full md:w-auto"
+            />
+          </div>
+          <div className="flex-1 md:flex-initial">
+            <RunFlowButton
+              onClick={handleRunFlow}
+              isLoading={isLoading}
+              className="w-full md:w-auto"
+            />
+          </div>
+          <div className="flex-1 md:flex-initial">
+            <SaveButton
+              onClick={handleSave}
+              disabled={!outputValue}
+              className="w-full md:w-auto"
+            />
+          </div>
         </div>
       </main>
     </div>
