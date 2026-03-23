@@ -1,16 +1,18 @@
 import { useState, useCallback } from "react";
+import { toast } from "sonner";
 import ThemeToggle from "./ThemeToggle";
 import InputNode from "./InputNode";
 import AnswerNode from "./AnswerNode";
 import RunFlowButton from "./RunFlowButton";
 import ResetButton from "./ResetButton";
 import SaveButton from "./SaveButton";
-import { generateAIResponse } from "../services/aiService";
+import { generateAIResponse, saveFlow } from "../services/aiService";
 
 function Canvas() {
   const [inputValue, setInputValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   const handleInputChange = useCallback((value: string) => {
     setInputValue(value);
@@ -27,6 +29,7 @@ function Canvas() {
       setOutputValue(responseText);
     } catch (error) {
       console.error("Error running flow:", error);
+      toast.error("Failed to generate response.");
       setOutputValue("Error: Could not connect to the AI server.");
     } finally {
       setIsLoading(false);
@@ -38,9 +41,21 @@ function Canvas() {
     setOutputValue("");
   }, []);
 
-  const handleSave = useCallback(() => {
+  const handleSave = useCallback(async () => {
     if (!outputValue) return;
-    console.log("Saving flow:", { prompt: inputValue, response: outputValue });
+
+    setIsSaving(true);
+    try {
+      const result = await saveFlow(inputValue, outputValue);
+      if (result.success) {
+        toast.success("Flow saved successfully!");
+      }
+    } catch (error) {
+      console.error("Error saving flow:", error);
+      toast.error("Failed to save flow.");
+    } finally {
+      setIsSaving(false);
+    }
   }, [inputValue, outputValue]);
 
   const isResetDisabled = !inputValue.trim() || isLoading;
@@ -88,6 +103,7 @@ function Canvas() {
             <SaveButton
               onClick={handleSave}
               disabled={!outputValue}
+              isLoading={isSaving}
               className="w-full md:w-auto"
             />
           </div>
